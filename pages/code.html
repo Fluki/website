@@ -12,6 +12,8 @@
         <div class="menu">
             <a href="../index.html">Index</a>
         </div>
+        <div class="wrapper">
+
         <div class="content">
             <h2>Setting up Caps Lock as a Esc and Mod key</h2>
             <div class="code">
@@ -25,9 +27,31 @@
                 xmodmap -e 'keycode 135 = Super_R' <br>
                 <b>#Turn off the caps lock if on since there is no longer a key for it</b> <br>
                 xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
-
             </div>
         </div>
+        <div class="content">
+          <h2>Generating and adding SSH to GitHub</h2>
+          <div class="code">
+            <b>Generating SSH key</b> <br>
+            ssh-keygen -t ed25519 -C email@.com<br>
+            <b>Starting SHH agent</b><br>
+            eval "$(ssh-agent -s)"<br>
+            <b>Adding private key to ssh agent</b><br>
+            vim ~/.ssh/config <br>
+            <div class="editor">
+              Host *<br>
+                AddKeysToAgent yes<br>
+                IdentityFile ~/.ssh/new_created_key<br>
+            </div>
+            ssh-add ~/.ssh/new_created_key<br>
+            <b>Adding SSH key to GitHub</b><br>
+            <a href="https://github.com/settings/ssh/new">Go to</a>
+            <br>
+            </b>In key field just put newly created key.pub</b>  
+          </div>
+        </div>
+    </div>
+
     </div>
 </body>
 </html>

@@ -33,7 +33,7 @@ a:visited
 {
     display: block;
     width: 10vw;
-    height: 100vh;
+    height: auto;
     background-color: var(--dark-blue);
     border-right: 5px solid var(--violet);
     color: #fff;
@@ -44,17 +44,42 @@ a:visited
     margin: 20px;
 }
 
+.wrapper
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .content
 {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     color: #0E131F;
     align-items: center;
-    /* padding: 30px; */
+    padding: 50px;
 }
 
 .code
 {
+    border: 5px solid black;
     font-size: 18px;
     background-color: #b6b6b6;
+    width: 90%;
+}
+
+.code a
+{
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.editor
+{
+    background-color: #828282;
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
