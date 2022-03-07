@@ -48,6 +48,44 @@
             <a href="https://github.com/settings/ssh/new" target="_blank">Go to</a>
             <br>
             </b>In key field just put newly created key.pub</b>  
+            <h3>!!! Every time you change SSH user you must go and do the following command</h3>
+            ssh-add ~/.ssh/wanted_key
+            &&
+            eval "$(ssh-agent -s)"
+          </div>
+        </div>
+        <div class="content">
+          <h2>Setting up imwheel & adding it to GNOME autostart</h2>
+          <div class="code">
+            <b>After installing imwheel program, you should create</b> <br>
+            .imwheelrc <br>
+            <b>in your home directory</b><br>
+            <b>After that you should edit the <i>.imwheelrc</i> file. <br>
+              I wont go into great detail explaining how and what each line does. <br>
+              But changing the number values changes the scroll behaviour </b> <br>
+            <div class="editor">
+              ".*" <br>
+              None, Up, Button4, 4<br>
+              None, Down, Button5, 4<br>
+              Shift_L,   Up,   Shift_L|Button4, 4<br>
+              Shift_L,   Down, Shift_L|Button5, 4<br>
+              Control_L, Up,   Control_L|Button4<br>
+              Control_L, Down, Control_L|Button5<br>
+            </div>
+            <b>In order to make Gnome session autostart this imwheel program, <br>
+              you can create <i>imwheel.desktop</i> file in your </i>.config/autostart/</i><br>
+              <i> I eddited my file like this: </i> </b> <br>
+            <div class="editor">
+              [Desktop Entry]<br>
+              Type=Application<br>
+              Exec=imwheel -b 45<br>
+              Terminal=true<br>
+              Hidden=false<br>
+              X-GNOME-Autostart-enabled=true<br>
+              Name=imwheel<br>
+              Comment=change scroll speed<br>
+            </div>
+            <b>Where </i>-b 45</i> flags tell the program that we want to use back and foward buttons on our mouse.</b>
           </div>
         </div>
     </div>
